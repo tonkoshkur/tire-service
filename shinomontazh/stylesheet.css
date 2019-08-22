@@ -1,5 +1,5 @@
 @font-face {
-    font-family: 'ljk_P22Matador-Regular';
+    font-family: 'Azoft_Sans';
     src: url('azoft-sans.ttf');
     src: url('azoft-sans.ttf') format('truetype');
     font-style: normal;
@@ -8,10 +8,11 @@
 body {
 	background-color: black;
 	color: white;
-	font-family: 'ljk_P22Matador-Regular', Arial, sans-serif;
+	font-family: 'Azoft_Sans', Arial, sans-serif;
 	font-size: 14px;
 	line-height: 200%;
 	margin: 0px;
+	padding-bottom: 40px;
 }
 header {
 	align-items: center;
