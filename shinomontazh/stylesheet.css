@@ -1,0 +1,76 @@
+@font-face {
+    font-family: 'ljk_P22Matador-Regular';
+    src: url('azoft-sans.ttf');
+    src: url('azoft-sans.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+}
+body {
+	background-color: black;
+	color: white;
+	font-family: 'ljk_P22Matador-Regular', Arial, sans-serif;
+	font-size: 14px;
+	line-height: 200%;
+	margin: 0px;
+}
+header {
+	align-items: center;
+	background-color: black;
+	display: inline-flex;
+	height: 60px;
+	justify-content: space-between;
+	min-width: 1000px;
+	position: fixed;
+	width: 100%;
+}
+a {
+	color: white;
+	text-decoration: none;
+}
+nav a, header > h1 {
+  padding: 15px;
+}
+nav :last-child {
+  padding-right: 30px;
+}
+main {
+	padding-top: 60px;
+	text-align: center;
+}
+.welcome {
+	background: url(images/homepage/welcome_img.jpg) no-repeat center;
+	background-size: 100%;
+	display: table;
+	font-size: 3em;
+	height: 767px;
+	line-height: 200%;
+	margin: auto;
+	text-align: center;
+	width: 100%;
+}
+.table-cell {
+	display: table-cell;
+	vertical-align: middle;
+}
+.services {
+	display: grid;
+	gap: 1vw;
+	grid-template: 420px auto 420px auto 420px auto / 50% 50%;
+	margin: auto;
+	place-items: center center;
+	width: 1020px;
+}
+.services img {
+  max-height: 100%;
+  max-width: 100%;
+}
+.services .grid_cell {
+	align-self: start;
+}
+main h1 {
+  padding: 30px;
+}
+.about_us {
+	margin: auto;
+  width: 50%;
+}
