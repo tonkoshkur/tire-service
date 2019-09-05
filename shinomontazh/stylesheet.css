@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Azoft_Sans';
-    src: url('azoft-sans.ttf');
-    src: url('azoft-sans.ttf') format('truetype');
+    src: url('font/azoft-sans.ttf');
+    src: url('font/azoft-sans.ttf') format('truetype');
     font-style: normal;
     font-weight: normal;
 }
@@ -68,10 +68,171 @@ main {
 .services .grid_cell {
 	align-self: start;
 }
-main h1 {
+main .topic {
   padding: 30px;
 }
 .about_us {
 	margin: auto;
   width: 50%;
+}
+
+/*Стили для shinomontazh.html*/
+.shinomontazh {
+	font-size: 1.3em;
+	margin: auto;
+	width: 1020px;
+}
+.table_name {
+	text-align: right;
+}
+.table_name img, .table_name h2,     /*делаю ячейки меньше*/
+.repair_tires :nth-child(n),
+.ventil_installation :nth-child(n),
+.other :nth-child(n), .straightening :nth-child(n) {
+	margin: 5px;
+}
+.shinomontazh p, .shinomontazh td {  /*голубой цвет для цен*/
+	color: lightblue;
+}
+.star_text {
+	font-size: 0.7em;
+}
+.grid_car_table {
+	display: grid;
+	grid-template: 4fr repeat(8, 1fr) / 0.8fr repeat(5, 1fr);
+	place-items: center center;
+}
+.grid_car_table p {
+	margin: 0px;
+}
+.shinomontazh table {
+	border-collapse: collapse;
+	margin-top: 20px;
+}
+.shinomontazh td {
+	border-bottom: solid 1px white;
+	border-top: solid 1px white;
+	width: 17.3%;
+}
+.grid_car_table .bold_text, th {
+	color: white;
+	font-size: 1.1em;
+	font-weight: bold;
+	text-align: center;
+}
+.repair_tires, .ventil_installation,
+.other, .straightening {
+	display: grid;
+	margin: auto;
+	margin-top: 20px;
+	place-items: center center;
+	width: 65%;
+}
+.repair_tires {
+	grid-template: 1.2fr repeat(6, 1fr) / 90% 10%;
+}
+.ventil_installation {
+	grid-template: 1.2fr repeat(2, 1fr) / 90% 10%;
+}
+.other {
+	grid-template: 1.2fr repeat(6, 1fr) / 90% 10%;
+}
+.straightening {
+  grid-template: 1.2fr repeat(3, 1fr) / 90% 10%;
+}
+
+/*Стили для tires.html*/
+
+   body { margin: 0; }
+   .men {
+    position: absolute;
+    height: 140px; width: 200px;
+    background: #fc0;
+    border-bottom: 20px solid #333;
+    top: 300px;
+    left: 10px;
+    /* Анимация */
+    -webkit-transition-property: top;
+    -moz-transition-property: top;
+    -o-transition-property: top;
+    transition-property: top;
+    -webkit-transition-duration: 3s;
+    -moz-transition-duration: 3s;
+    -o-transition-duration: 3s;
+    transition-duration: 3s;
+   }
+   .menu:hover { top: 0; }
+
+   /*Стили для oil.html */
+.oil {
+	margin: auto;
+	min-width: 700px;
+}
+.oil_brand {
+	display: flex;
+	flex-direction: column;
+	top: 30vh;
+  text-align: left;
+  width: 50%;
+}
+.oil_brand div {
+	text-align: center;
+	width: 25vw;
+}
+.oil_brand div:hover {
+  background-color: orchid;
+}
+.oil_brand > div > div {
+	display: none;
+}
+.ac_delco:hover .ac_delco_table, .aral:hover .aral_table,
+.bg:hover .bg_table, .bmw:hover .bmw_table,
+.castrol:hover .castrol_table,
+.castrol_pro:hover .castrol_pro_table,
+.daewoo:hover .daewoo_table, .elf:hover .elf_table, 
+.eneos:hover .eneos_table, .febi:hover .febi_table {
+  display: inline-grid;
+	grid-template-columns: 70% 30%;
+  position: fixed;
+  right: 0vw;
+  top: 186px;
+  text-align: center;
+  width: 60vw;
+}
+.ford:hover .ford_table, .ford_moto:hover .ford_moto_table,
+.fuchs:hover .fuchs_table, .gm:hover .gm_table,
+.honda:hover .honda_table, .hyundai:hover .hyundai_table,
+.idemitsu:hover .idemitsu_table, .kixx:hover .kixx_table,
+.kleen_fro:hover .kleen_fro_table,
+.land_rover:hover .land_rover_table,
+.lexus:hover .lexus_table, .mazda:hover .mazda_table,
+.mercedes:hover .mercedes_table,
+.mitsubishi:hover .mitsubishi_table, .mobil:hover .mobil_table,
+.mobil_usa:hover .mobil_usa_table, .mopar:hover .mopar_table,
+.motul:hover .motul_table, .nissan:hover .nissan_table,
+.pentosin:hover .pentosin_table, .q8:hover .q8_table,
+.quaker_state:hover .quaker_state_table,
+.rain_x:hover .rain_x_table, .renault:hover .renault_table,
+.selenia:hover .selenia_table,
+.shellzone:hover .shellzone_table,
+.subaru:hover .subaru_table, .total:hover .total_table,
+.toyota:hover .toyota_table, .trw:hover .trw_table,
+.vag:hover .vag_table, .victor_reinz:hover .victor_reinz_table,
+.wynns:hover .wynns_table, .zf:hover .zf_table,
+.taiga:hover .taiga_table {
+  display: inline-grid;
+	grid-template-columns: 70% 30%;
+  position: fixed;
+  right: 0vw;
+  top: 60px;
+  text-align: center;
+  width: 60vw;
+}
+.oil_brand > div > div > p {
+	background-color: slateblue;
+	margin: 0px;
+}
+.oil_brand > div > div :nth-child(4n+3),
+.oil_brand > div > div :nth-child(4n+4) {
+	background-color: RoyalBlue;
 }
