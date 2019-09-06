@@ -77,8 +77,8 @@ main .topic {
   width: 50%;
 }
 
-/*Стили для shinomontazh.html*/
-.shinomontazh {
+/*Стили для shinomontazh.html и discs.html*/
+.shinomontazh, .discs {
 	font-size: 1.3em;
 	margin: auto;
 	width: 1020px;
@@ -92,7 +92,8 @@ main .topic {
 .other :nth-child(n), .straightening :nth-child(n) {
 	margin: 5px;
 }
-.shinomontazh p, .shinomontazh td {  /*голубой цвет для цен*/
+.shinomontazh p, .shinomontazh td,
+.discs p {                       /*голубой цвет для цен*/
 	color: lightblue;
 }
 .star_text {
@@ -143,28 +144,45 @@ main .topic {
 }
 
 /*Стили для tires.html*/
+.tires {
+	font-size: 1.2em;
+	margin: auto;
+	min-width: 950px;
+}
+.tires_table{
+	text-align: center;
+	width: 100%;
+}
+.tires_table td {
+	background-color: DarkOrange;
+	vertical-align: middle;
+}
+.tires .summer, .tires .winter {
+	font-size: 2em;
+	font-weight: bold;
+}
+.tires tr:nth-child(n+22) td {
+	background-color: MediumTurquoise;
+	color: black;
+}
+.tires_link button {
+	background-color: inherit;
+	border: none;
+	font-size: inherit;
+	margin-top: 40px;
+}
+.tires_link a {
+	background-color: LemonChiffon;
+	border-radius: 50%;
+	color: black;
+	font-family: 'Azoft_Sans', Arial, sans-serif;
+	padding: 20px;
+}
+.tires_link a:hover {
+	background-color: LightYellow;
+}
 
-   body { margin: 0; }
-   .men {
-    position: absolute;
-    height: 140px; width: 200px;
-    background: #fc0;
-    border-bottom: 20px solid #333;
-    top: 300px;
-    left: 10px;
-    /* Анимация */
-    -webkit-transition-property: top;
-    -moz-transition-property: top;
-    -o-transition-property: top;
-    transition-property: top;
-    -webkit-transition-duration: 3s;
-    -moz-transition-duration: 3s;
-    -o-transition-duration: 3s;
-    transition-duration: 3s;
-   }
-   .menu:hover { top: 0; }
-
-   /*Стили для oil.html */
+/*Стили для oil.html */
 .oil {
 	margin: auto;
 	min-width: 700px;
@@ -189,26 +207,21 @@ main .topic {
 .oil_brand:hover .oil_link:hover {
 	display: block;
 }
-.oil_brand > .oil_brand_part1:hover > div {
-  display: inline-grid;
-	grid-template-columns: 70% 30%;
-  position: fixed;
-  right: 0vw;
-  top: 186px;
-  text-align: center;
-  width: 60vw;
-}
 .oil_brand > div:hover > div {
   display: inline-grid;
 	grid-template-columns: 70% 30%;
   position: fixed;
   right: 0vw;
-  top: 60px;
+  top: 65px;
   text-align: center;
-  width: 60vw;
+  width: 65vw;
+}
+.oil_brand > .oil_brand_part1:hover > div {
+  top: 186px;
 }
 .oil_brand > .toyota:hover > .toyota_table {
   top: 0px;
+  z-index: 2;
 }
 .oil_brand > div > div > p {
 	background-color: slateblue;
@@ -239,6 +252,7 @@ main .topic {
 .oil_link a {
 	background-color: orchid;
 	border-radius: 50%;
+	font-family: 'Azoft_Sans', Arial, sans-serif;
 	padding: 20px;
 }
 .oil_link a:hover {
