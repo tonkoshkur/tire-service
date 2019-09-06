@@ -23,6 +23,7 @@ header {
 	min-width: 1000px;
 	position: fixed;
 	width: 100%;
+	z-index: 1; /*для перекрытия position: absolute;*/
 }
 a {
 	color: white;
@@ -173,7 +174,7 @@ main .topic {
 	flex-direction: column;
 	top: 30vh;
   text-align: left;
-  width: 50%;
+  width: 25vw;
 }
 .oil_brand div {
 	text-align: center;
@@ -182,15 +183,13 @@ main .topic {
 .oil_brand div:hover {
   background-color: orchid;
 }
-.oil_brand > div > div {
+.oil_brand > div > div, .oil_brand:hover .oil_link {
 	display: none;
 }
-.ac_delco:hover .ac_delco_table, .aral:hover .aral_table,
-.bg:hover .bg_table, .bmw:hover .bmw_table,
-.castrol:hover .castrol_table,
-.castrol_pro:hover .castrol_pro_table,
-.daewoo:hover .daewoo_table, .elf:hover .elf_table, 
-.eneos:hover .eneos_table, .febi:hover .febi_table {
+.oil_brand:hover .oil_link:hover {
+	display: block;
+}
+.oil_brand > .oil_brand_part1:hover > div {
   display: inline-grid;
 	grid-template-columns: 70% 30%;
   position: fixed;
@@ -199,27 +198,7 @@ main .topic {
   text-align: center;
   width: 60vw;
 }
-.ford:hover .ford_table, .ford_moto:hover .ford_moto_table,
-.fuchs:hover .fuchs_table, .gm:hover .gm_table,
-.honda:hover .honda_table, .hyundai:hover .hyundai_table,
-.idemitsu:hover .idemitsu_table, .kixx:hover .kixx_table,
-.kleen_fro:hover .kleen_fro_table,
-.land_rover:hover .land_rover_table,
-.lexus:hover .lexus_table, .mazda:hover .mazda_table,
-.mercedes:hover .mercedes_table,
-.mitsubishi:hover .mitsubishi_table, .mobil:hover .mobil_table,
-.mobil_usa:hover .mobil_usa_table, .mopar:hover .mopar_table,
-.motul:hover .motul_table, .nissan:hover .nissan_table,
-.pentosin:hover .pentosin_table, .q8:hover .q8_table,
-.quaker_state:hover .quaker_state_table,
-.rain_x:hover .rain_x_table, .renault:hover .renault_table,
-.selenia:hover .selenia_table,
-.shellzone:hover .shellzone_table,
-.subaru:hover .subaru_table, .total:hover .total_table,
-.toyota:hover .toyota_table, .trw:hover .trw_table,
-.vag:hover .vag_table, .victor_reinz:hover .victor_reinz_table,
-.wynns:hover .wynns_table, .zf:hover .zf_table,
-.taiga:hover .taiga_table {
+.oil_brand > div:hover > div {
   display: inline-grid;
 	grid-template-columns: 70% 30%;
   position: fixed;
@@ -228,11 +207,40 @@ main .topic {
   text-align: center;
   width: 60vw;
 }
+.oil_brand > .toyota:hover > .toyota_table {
+  top: 0px;
+}
 .oil_brand > div > div > p {
 	background-color: slateblue;
 	margin: 0px;
 }
+.oil_brand > .toyota > div > p {
+	margin: -2px;
+}
 .oil_brand > div > div :nth-child(4n+3),
 .oil_brand > div > div :nth-child(4n+4) {
 	background-color: RoyalBlue;
+}
+.oil_link {
+	font-size: 1.2em;
+	position: absolute;
+	left: 30vw;
+	text-align: center;
+	top: 210px;
+	width: 60vw;
+	z-index: 0;
+}
+.oil_link button {
+	background-color: inherit;
+	border: none;
+	font-size: inherit;
+	margin-top: 40px;
+}
+.oil_link a {
+	background-color: orchid;
+	border-radius: 50%;
+	padding: 20px;
+}
+.oil_link a:hover {
+	background-color: violet;
 }
