@@ -1,14 +1,17 @@
 @font-face {
-    font-family: 'Azoft_Sans';
-    src: url('font/azoft-sans.ttf');
-    src: url('font/azoft-sans.ttf') format('truetype');
-    font-style: normal;
-    font-weight: normal;
+	font-family: 'Montserrat';
+	src: url('fonts/montserrat/Montserrat-Light.eot');
+	src: local('Montserrat Light'), local('Montserrat-Light'),
+		url('fonts/montserrat/Montserrat-Light.eot?#iefix') format('embedded-opentype'),
+		url('fonts/montserrat/Montserrat-Light.woff') format('woff'),
+		url('fonts/montserrat/Montserrat-Light.ttf') format('truetype');
+	font-style: normal;
+	font-weight: 300;
 }
 body {
 	background-color: black;
 	color: white;
-	font-family: 'Azoft_Sans', Arial, sans-serif;
+	font-family: 'Montserrat', Arial, sans-serif;
 	font-size: 14px;
 	line-height: 200%;
 	margin: 0px;
@@ -18,16 +21,20 @@ header {
 	align-items: center;
 	background-color: black;
 	display: inline-flex;
-	height: 60px;
 	justify-content: space-between;
-	min-width: 1000px;
 	position: fixed;
+	max-height: 60px;
+	min-width: 700px;
 	width: 100%;
-	z-index: 1; /*для перекрытия position: absolute;*/
+	z-index: 10; /*для перекрытия position: absolute;*/
 }
 a {
 	color: white;
 	text-decoration: none;
+}
+a:hover {
+	color: lightblue;
+	transition: 1s;
 }
 nav a, header > h1 {
   padding: 15px;
@@ -41,25 +48,22 @@ main {
 }
 .welcome {
 	background: url(images/homepage/welcome_img.jpg) no-repeat center;
-	background-size: 100%;
-	display: table;
+	background-size: cover;
+	display: flex;
+	place-items: center center;
 	font-size: 3em;
-	height: 767px;
 	line-height: 200%;
+	height: 767px;
+	min-width: 700px;
 	margin: auto;
-	text-align: center;
-	width: 100%;
-}
-.table-cell {
-	display: table-cell;
-	vertical-align: middle;
+	padding: 0px;
 }
 .services {
 	display: grid;
 	gap: 1vw;
 	grid-template: 420px auto 420px auto 420px auto / 50% 50%;
-	margin: auto;
 	place-items: center center;
+	margin: auto;
 	width: 1020px;
 }
 .services img {
@@ -72,7 +76,7 @@ main {
 main .topic {
   padding: 30px;
 }
-.about_us {
+.about_us_homepage {
 	margin: auto;
   width: 50%;
 }
@@ -112,8 +116,8 @@ main .topic {
 	margin-top: 20px;
 }
 .shinomontazh td {
-	border-bottom: solid 1px white;
-	border-top: solid 1px white;
+/*border-bottom: solid 1px white;
+	border-top: solid 1px white;*/
 	width: 17.3%;
 }
 .grid_car_table .bold_text, th {
@@ -125,22 +129,22 @@ main .topic {
 .repair_tires, .ventil_installation,
 .other, .straightening {
 	display: grid;
+	place-items: center center;
 	margin: auto;
 	margin-top: 20px;
-	place-items: center center;
 	width: 65%;
 }
 .repair_tires {
-	grid-template: 1.2fr repeat(6, 1fr) / 90% 10%;
+	grid-template: 1.2fr repeat(6, 1fr) / 85% 15%;
 }
 .ventil_installation {
-	grid-template: 1.2fr repeat(2, 1fr) / 90% 10%;
+	grid-template: 1.2fr repeat(2, 1fr) / 85% 15%;
 }
 .other {
-	grid-template: 1.2fr repeat(6, 1fr) / 90% 10%;
+	grid-template: 1.2fr repeat(6, 1fr) / 85% 15%;
 }
 .straightening {
-  grid-template: 1.2fr repeat(3, 1fr) / 90% 10%;
+  grid-template: 1.2fr repeat(3, 1fr) / 85% 15%;
 }
 
 /*Стили для tires.html*/
@@ -153,34 +157,92 @@ main .topic {
 	text-align: center;
 	width: 100%;
 }
-.tires_table td {
-	background-color: DarkOrange;
-	vertical-align: middle;
+.columns_name {
+	display: grid;
+	grid-template-columns: repeat(5, 12.5vw) 40vw;
 }
+
 .tires .summer, .tires .winter {
 	font-size: 2em;
 	font-weight: bold;
 }
-.tires tr:nth-child(n+22) td {
-	background-color: MediumTurquoise;
-	color: black;
+.tires td {
+	background-color: #313F52;
+	font-weight: bold;
 }
+.tires tr:nth-child(n+22) td {
+	background-color: #545E52;
+}
+
 .tires_link button {
 	background-color: inherit;
 	border: none;
+	border-radius: 50%;
 	font-size: inherit;
 	margin-top: 40px;
+	padding: 20px;
+}
+.tires_link button:hover {
+  transform: scale(1.2);
+  transition: 2s;
 }
 .tires_link a {
 	background-color: LemonChiffon;
 	border-radius: 50%;
 	color: black;
-	font-family: 'Azoft_Sans', Arial, sans-serif;
+	font-family: 'Montserrat', Arial, sans-serif;
+	font-weight: bold;
 	padding: 20px;
 }
 .tires_link a:hover {
 	background-color: LightYellow;
 }
+/* Попытка сделать выдвигающееся меню (не очень практично)
+.tires ul, li {
+	background-color: DarkOrange;	
+	list-style: none;
+	margin: 0px -1.1em;
+	text-align: left;
+	width: 12.5vw;
+}
+.tires li { 
+	text-align: center;
+	padding: 20px 0px;
+	width: 100%;
+}
+.tires_list ul {
+	left: -100vw;
+	position: absolute;
+}
+.tires ul li:hover {
+	background: tomato;
+}
+.tires ul li:hover > ul {
+	transform: translate(115.4vw, -116px);
+}
+.tires .info li {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+.tires .info li {
+	width: 40vw;
+}
+*/
+/* Попытка №2 
+.hidden_info {
+	position: relative;
+	left: -1500px;
+	opacity: 0;
+	transition: 1s;
+	z-index: -1;
+}
+.only_one_width:hover~.hidden_info,
+.width:hover~.section,
+.section:hover~.hidden_info,
+.hidden_info:hover {
+	opacity: 1;
+	transform: translateX(1500px);
+}*/
 
 /*Стили для oil.html */
 .oil {
@@ -190,8 +252,8 @@ main .topic {
 .oil_brand {
 	display: flex;
 	flex-direction: column;
-	top: 30vh;
   text-align: left;
+	top: 30vh;
   width: 25vw;
 }
 .oil_brand div {
@@ -200,35 +262,51 @@ main .topic {
 }
 .oil_brand div:hover {
   background-color: orchid;
+  transition: 1s;
 }
-.oil_brand > div > div, .oil_brand:hover .oil_link {
+.oil_brand > div > div{
 	display: none;
+  transition: 0.5s;
+}
+.oil_brand:hover .oil_link {
+	opacity: 0;
+  transition: 0.5s;
 }
 .oil_brand:hover .oil_link:hover {
-	display: block;
+	opacity: 1;
 }
-.oil_brand > div:hover > div {
+.oil_brand > div > div {
   display: inline-grid;
 	grid-template-columns: 70% 30%;
+  justify-content: center;
   position: fixed;
-  right: 0vw;
+  right: -80vw;
   top: 65px;
-  text-align: center;
   width: 65vw;
+  z-index: 10;
+}
+.oil_brand > .oil_brand_part1 > div {
+  top: 186px;
+}
+.oil_brand > div:hover > div {
+  top: 65px;
+  right: 0vw;
+  transition: 0.5s;
 }
 .oil_brand > .oil_brand_part1:hover > div {
   top: 186px;
 }
 .oil_brand > .toyota:hover > .toyota_table {
-  top: 0px;
-  z-index: 2;
+  font-size: 0.9em;
 }
 .oil_brand > div > div > p {
-	background-color: slateblue;
 	margin: 0px;
 }
+.oil_brand > div > div :nth-child(n+3) {
+	background-color: slateblue;
+}
 .oil_brand > .toyota > div > p {
-	margin: -2px;
+	height: 20px;
 }
 .oil_brand > div > div :nth-child(4n+3),
 .oil_brand > div > div :nth-child(4n+4) {
@@ -236,25 +314,71 @@ main .topic {
 }
 .oil_link {
 	font-size: 1.2em;
-	position: absolute;
-	left: 30vw;
 	text-align: center;
+	position: fixed;
+	left: 30vw;
 	top: 210px;
+  transition: 1s;
 	width: 60vw;
-	z-index: 0;
 }
 .oil_link button {
 	background-color: inherit;
 	border: none;
+	border-radius: 50%;
 	font-size: inherit;
 	margin-top: 40px;
+	padding: 20px;
+}
+.oil_link button:hover {
+  transform: scale(1.2);
+  transition: 2s;
 }
 .oil_link a {
 	background-color: orchid;
 	border-radius: 50%;
-	font-family: 'Azoft_Sans', Arial, sans-serif;
+	color: white;
+	font-family: 'Montserrat', Arial, sans-serif;
 	padding: 20px;
 }
 .oil_link a:hover {
 	background-color: violet;
+}
+
+/* Стили для about_us.html */
+.about_us {
+	font-size: 1.2em;
+	margin: auto;
+	min-width: 500px;
+}
+.equipment {
+	display: grid;
+	grid-template: 3fr 1fr 3fr / repeat(3, 1fr);
+	column-gap: 1vw;
+	margin: inherit;
+	min-width: 800px;
+	width: 60vw;
+}
+.equipment h3, .equipment p {
+	background-color: DimGray;
+	margin: 0px;
+	padding-top: 10px;
+}
+.equipment img {
+	height: 100%;
+	width: 100%;
+}
+.equipment~h2 {
+	margin-top: 40px;
+
+}
+.staff {
+	display: grid;
+	grid-template-columns: 50% 50%;
+	place-items: center center;
+	margin:auto;
+	width: 800px;
+}
+.staff img {
+  max-height: 100%;
+  max-width: 100%;
 }
