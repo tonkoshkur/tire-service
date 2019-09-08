@@ -300,7 +300,7 @@ main .topic {
   font-size: 0.9em;
 }
 .oil_brand > div > div > p {
-	margin: 0px;
+	margin: -1px;
 }
 .oil_brand > div > div :nth-child(n+3) {
 	background-color: slateblue;
