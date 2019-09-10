@@ -108,7 +108,6 @@ main .topic {
 	font-size: 0.7em;
 }
 .shinomontazh table {
-	border-collapse: collapse;
 	margin-bottom: 30px;
 }
 .shinomontazh td {
@@ -267,10 +266,6 @@ main .topic {
   background-color: orchid;
   transition: 1s;
 }
-.oil_brand > div > div{
-	display: none;
-  transition: 0.5s;
-}
 .oil_brand:hover .oil_link {
 	opacity: 0;
   transition: 0.5s;
@@ -284,20 +279,17 @@ main .topic {
   justify-content: center;
   position: fixed;
   right: -80vw;
-  top: 65px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: 0.5s;
   width: 65vw;
   z-index: 10;
 }
-.oil_brand > .oil_brand_part1 > div {
-  top: 186px;
-}
 .oil_brand > div:hover > div {
-  top: 65px;
-  right: 0vw;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
   transition: 0.5s;
-}
-.oil_brand > .oil_brand_part1:hover > div {
-  top: 186px;
 }
 .oil_brand > .toyota:hover > .toyota_table {
   font-size: 0.9em;
@@ -364,7 +356,7 @@ main .topic {
 }
 .equipment h3, .equipment p {
 	background-color: DimGray;
-	margin: 0px;
+	margin: 0;
 	padding: 10px 5px 5px 5px;
 }
 .equipment~h2 {
