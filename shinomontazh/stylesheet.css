@@ -11,7 +11,7 @@
 body {
 	background-color: black;
 	color: white;
-	font-family: 'Montserrat', Arial, sans-serif;
+	font-family: 'Montserrat', 'Arial', sans-serif;
 	font-size: 14px;
 	line-height: 200%;
 	margin: 0;
@@ -76,7 +76,9 @@ main .topic {
 	grid-template: 420px auto 420px auto 420px auto / 50% 50%;
 	place-items: center center;
 	margin: auto;
-	width: 1020px;
+	min-width: 800px;
+	max-width: 1020px;
+	width: 80%;
 	word-wrap: break-word;
 }
 .services img {
@@ -192,7 +194,7 @@ main .topic {
 	background-color: LemonChiffon;
 	border-radius: 50%;
 	color: black;
-	font-family: 'Montserrat', Arial, sans-serif;
+	font-family: 'Montserrat', 'Arial', sans-serif;
 	font-weight: bold;
 	padding: 20px;
 }
@@ -297,6 +299,10 @@ main .topic {
 .oil_brand > div > div > p {
 	margin: -1px;
 }
+.oil_brand > div > div :first-child,
+.oil_brand > div > div :nth-child(2) {
+	background-color: black;
+}
 .oil_brand > div > div :nth-child(n+3) {
 	background-color: slateblue;
 }
@@ -350,8 +356,9 @@ main .topic {
 	grid-template-columns: 33% 33% 33%;
 	column-gap: 1vw;
 	margin: inherit;
-	min-width: 500px;
-	width: 1000px;
+	min-width: 800px;
+	max-width: 1000px;
+	width: 80%;
 	word-wrap: break-word;
 }
 .equipment h3, .equipment p {
@@ -372,4 +379,5 @@ main .topic {
 .equipment img, .staff img {
   max-height: 100%;
   max-width: 100%;
+}
 }
