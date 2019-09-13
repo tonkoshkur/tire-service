@@ -10,6 +10,7 @@
 }
 body {
 	background-color: black;
+	box-sizing: border-box;
 	color: white;
 	font-family: 'Montserrat', 'Arial', sans-serif;
 	font-size: 14px;
@@ -31,6 +32,9 @@ header {
 	width: 100%;
 	z-index: 10; /*для перекрытия position: absolute;*/
 }
+#submenu, #submenu+label, .burger-line {
+	display: none;
+}
 a {
 	color: white;
 	text-decoration: none;
@@ -40,7 +44,7 @@ a:hover {
 	color: lightblue;
 	transition: 1s;
 }
-nav a, header > h1 {
+nav a, header > h1, header > p {
   padding: 15px;
 }
 nav :last-child {
@@ -297,7 +301,7 @@ main .topic {
   font-size: 0.9em;
 }
 .oil_brand > div > div > p {
-	margin: -1px;
+	margin: -1px; /*не было никакого отступа*/
 }
 .oil_brand > div > div :first-child,
 .oil_brand > div > div :nth-child(2) {
@@ -379,5 +383,140 @@ main .topic {
 .equipment img, .staff img {
   max-height: 100%;
   max-width: 100%;
+}
+
+@media only screen and (max-device-width: 768px) {
+body {
+	font-size: 2em;
+	line-height: 165%;
+}
+  /*Бургер*/
+header {
+	max-height: 120px;
+}
+main {
+	padding-top: 120px;
+}
+header > h1, header > p {
+	display: none;
+} 
+#submenu+label {
+	display: flex;
+	justify-content: center;
+	line-height: 120px;
+	font-size: 2.5em;
+	width: 100%;
+}
+nav {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	text-align: center;
+	font-size: 0;
+	max-height: 0;
+	overflow: hidden;
+	position: absolute;
+	top: 119px;
+	left: 0;
+	transition: .5s;
+	width: 100%;
+}
+nav a {
+	display: block;
+	padding: 50px 0px;
+	width: 100vw;
+}
+input#submenu:checked~nav {
+	background-color: black;
+	font-size: 1.5em;
+	max-height: 100vh;
+	transition: .5s;
+}
+.burger-line {
+	background-color: white;
+	display: block;
+	position: absolute;
+	top: 30px;
+	right: 30px;
+	height: 5px;
+	width: 90px;
+	transition: .5s;
+}
+.second, .third {
+	top: 60px;
+}
+.fourth {
+	top: 90px;
+}
+input#submenu:checked ~ .first, input:checked ~ .fourth {
+	opacity: 0;
+	transition: .5s;
+}
+input#submenu:checked ~ .second {
+	transform: rotate(45deg);
+	transition: .5s;
+}
+input#submenu:checked ~ .third {
+	transform: rotate(-45deg);
+	transition: .5s;
+}
+
+/* Стили для index.html и about_us.html */
+.welcome {
+	font-size: 1.5em;
+}
+.services, .equipment, .staff {
+	display: flex;
+	flex-direction: column;
+}
+.second_cell {order:1;}
+.third_cell {order:2;}
+.fourth_cell {order:3;}
+.fifth_cell {order:4;}
+.sixth_cell {order:5;}
+.seventh_cell {order:6;}
+.eighth_cell {order:7;}
+.ninth_cell {order:8;}
+.tenth_cell {order:9;}
+.eleventh_cell {order:10;}
+.twelveth_cell {order:11;}
+
+.equipment p {
+	margin-top: -5px; /*не было никакого отступа*/
+	margin-bottom: 100px;
+}
+/* Стили для shinomontazh.html */
+.shinomontazh {
+font-size: 1.1em;
+}
+.shinomontazh th:first-child {
+	width: 10%;
+}
+.shinomontazh td:nth-child(n+5),
+.shinomontazh th:nth-child(n+5)  {
+	display: none;
+}
+/*Стили для tires.html*/ 
+.tires {
+	font-size: 0.8em;
+}
+/* Стили для oil.html 
+.oil_brand > div > div {
+	display: none;
+	position: static;
+	width: 80vw;
+	transition: 5s;
+}
+.oil_brand > div:hover > div {
+	display: grid;
+	transform: none;
+	transition: 5s;
+}
+.oil_brand > input:checked ~ .aral_table {
+	display: grid;
+	transform: none;
+}*/
+.oil_link {
+	top: 40vh;
 }
 }
