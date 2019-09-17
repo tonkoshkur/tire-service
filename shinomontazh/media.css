@@ -12,16 +12,26 @@ header > h1, header > p {
 	display: none;
 } 
 #submenu+label {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 	line-height: 120px;
 	font-size: 2.5em;
 	width: 100%;
 }
 nav {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-ms-flex-pack: distribute;
+	    justify-content: space-around;
 	text-align: center;
 	font-size: 0;
 	max-height: 0;
@@ -29,6 +39,8 @@ nav {
 	position: absolute;
 	top: 119px;
 	left: 0;
+	-webkit-transition: .5s;
+	-o-transition: .5s;
 	transition: .5s;
 	width: 100%;
 }
@@ -41,6 +53,8 @@ input#submenu:checked~nav {
 	background-color: black;
 	font-size: 1.5em;
 	max-height: 100vh;
+	-webkit-transition: .5s;
+	-o-transition: .5s;
 	transition: .5s;
 }
 .burger-line {
@@ -51,6 +65,8 @@ input#submenu:checked~nav {
 	right: 30px;
 	height: 5px;
 	width: 90px;
+	-webkit-transition: .5s;
+	-o-transition: .5s;
 	transition: .5s;
 }
 .second, .third {
@@ -61,14 +77,24 @@ input#submenu:checked~nav {
 }
 input#submenu:checked ~ .first, input:checked ~ .fourth {
 	opacity: 0;
+	-webkit-transition: .5s;
+	-o-transition: .5s;
 	transition: .5s;
 }
 input#submenu:checked ~ .second {
-	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	    -ms-transform: rotate(45deg);
+	        transform: rotate(45deg);
+	-webkit-transition: .5s;
+	-o-transition: .5s;
 	transition: .5s;
 }
 input#submenu:checked ~ .third {
-	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	    -ms-transform: rotate(-45deg);
+	        transform: rotate(-45deg);
+	-webkit-transition: .5s;
+	-o-transition: .5s;
 	transition: .5s;
 }
 
@@ -77,23 +103,28 @@ input#submenu:checked ~ .third {
 	font-size: 1.5em;
 }
 .services, .equipment, .staff {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: column;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
 }
 .services  img{
 	width: 65vw;
 }
-.second_cell {order:1;}
-.third_cell {order:2;}
-.fourth_cell {order:3;}
-.fifth_cell {order:4;}
-.sixth_cell {order:5;}
-.seventh_cell {order:6;}
-.eighth_cell {order:7;}
-.ninth_cell {order:8;}
-.tenth_cell {order:9;}
-.eleventh_cell {order:10;}
-.twelveth_cell {order:11;}
+.second_cell {-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1;}
+.third_cell {-webkit-box-ordinal-group:3;-ms-flex-order:2;order:2;}
+.fourth_cell {-webkit-box-ordinal-group:4;-ms-flex-order:3;order:3;}
+.fifth_cell {-webkit-box-ordinal-group:5;-ms-flex-order:4;order:4;}
+.sixth_cell {-webkit-box-ordinal-group:6;-ms-flex-order:5;order:5;}
+.seventh_cell {-webkit-box-ordinal-group:7;-ms-flex-order:6;order:6;}
+.eighth_cell {-webkit-box-ordinal-group:8;-ms-flex-order:7;order:7;}
+.ninth_cell {-webkit-box-ordinal-group:9;-ms-flex-order:8;order:8;}
+.tenth_cell {-webkit-box-ordinal-group:10;-ms-flex-order:9;order:9;}
+.eleventh_cell {-webkit-box-ordinal-group:11;-ms-flex-order:10;order:10;}
+.twelveth_cell {-webkit-box-ordinal-group:12;-ms-flex-order:11;order:11;}
 
 .equipment p {
 	margin-top: -5px; /*не было никакого отступа*/
@@ -133,12 +164,17 @@ font-size: 1.1em;
 	width: 100%;
 }
 .oil_brand > div > label {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 	font-size: 2em;
 	line-height: 2em;
 }
 .oil_brand > div > div {
+	display: -ms-grid;
 	display: grid;
 	place-items: center center;
 	font-size: 48px;
@@ -147,10 +183,14 @@ font-size: 1.1em;
 	margin: auto;
 	height: 0;
 	width: 100%;
-	transform: none;
+	-webkit-transform: none;
+	    -ms-transform: none;
+	        transform: none;
 } 
 .oil_brand > div:hover > div {
-	transform: none;
+	-webkit-transform: none;
+	    -ms-transform: none;
+	        transform: none;
 }
 .oil_brand > div > div > p {
 	height: 100%;
@@ -162,7 +202,9 @@ font-size: 1.1em;
 }
 .oil_brand input:checked ~ div {
 	height: auto;
-	transform: none;
+	-webkit-transform: none;
+	    -ms-transform: none;
+	        transform: none;
 }
 .oil_link {
 	position: static;
