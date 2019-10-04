@@ -62,6 +62,7 @@ a {
 }
 a:hover {
 	color: lightblue;
+	cursor: pointer;
 	-webkit-transition: 1s;
 	-o-transition: 1s;
 	transition: 1s;
@@ -79,6 +80,9 @@ main {
 }
 main .topic {
   padding: 30px;
+}
+.nowrap {
+	white-space: nowrap;
 }
 .welcome {
 	background: url(images/homepage/welcome_img.jpg) no-repeat center;
@@ -107,13 +111,17 @@ main .topic {
 	display: grid;
 	gap: 1vw;
 	-ms-grid-rows: 420px 1vw auto 1vw 420px 1vw auto 1vw 420px 1vw auto;
-	-ms-grid-columns: 50% 1vw 50%;
-	    grid-template: 420px auto 420px auto 420px auto / 50% 50%;
+	-ms-grid-columns: 49% 1vw 49%;
+	    grid-template: 420px auto 420px auto 420px auto / 49% 49%;
 	place-items: center center;
 	margin: auto;
 	max-width: 1020px;
 	width: 80%;
 	word-wrap: break-word;
+}
+.services a {
+	text-decoration: inherit;
+	height: 100%;
 }
 .services img {
   max-height: 100%;
@@ -163,17 +171,15 @@ main .topic {
 .repair_service {
 	display: -ms-grid;
 	display: grid;
-	-webkit-column-gap: 2vw;
-	   -moz-column-gap: 2vw;
-	        column-gap: 2vw;
+	-webkit-column-gap: 2%;
+	   -moz-column-gap: 2%;
+	        column-gap: 2%;
+  -ms-grid-columns: 77% 21%;
+  grid-template-columns: 77% 21%;
 	place-items: center center;
 	margin: auto;
 	margin-top: 20px;
 	width: 60%;
-}
-.repair_service {
-  -ms-grid-columns: 80% 20%;
-  grid-template-columns: 80% 20%;
 }
 .table_name img, .table_name h2,     /*делаю ячейки меньше*/
 .repair_service :nth-child(n) {
@@ -353,9 +359,6 @@ main .topic {
   -o-transition: 0.5s;
   transition: 0.5s;
 }
-.oil_brand > .toyota:hover > .toyota_table {
-  font-size: 0.9em;
-}
 .oil_brand > div > div > p {
 	display: -ms-grid;
 	display: grid; /*для выравнивания по центру*/
@@ -372,14 +375,17 @@ main .topic {
 	background-color: slateblue;
 }
 .oil_brand > .toyota > div > p {
+	display: flex;
+	justify-content: center;
 	height: 20px;
+  font-size: 0.8em;
 }
 .oil_brand > div > div :nth-child(4n+3),
 .oil_brand > div > div :nth-child(4n+4) {
 	background-color: RoyalBlue;
 }
 .oil_link {
-	font-size: 1.2em;
+	font-size: 1.4em;
 	text-align: center;
 	position: fixed;
 	left: 30vw;
