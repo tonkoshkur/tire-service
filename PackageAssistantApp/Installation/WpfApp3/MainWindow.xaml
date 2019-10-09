@@ -1,0 +1,137 @@
+﻿<Window x:Class="WpfApp3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp3"
+        mc:Ignorable="d"
+        Style="{StaticResource WindowStyle}">
+    
+    <Window.Resources>
+        <Style x:Key="RoundButtonTemplate" TargetType="Button">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border
+                            x:Name="PART_border" 
+                            CornerRadius="5"  
+                            Background="{TemplateBinding Background}"
+                            BorderThickness="1" 
+                            BorderBrush="LightGray">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="PART_border" Property="Background" Value="{StaticResource WindowBorderBrush}" />
+                                <Setter TargetName="PART_border" Property="Opacity" Value="0.5" />
+                                <Setter Property="Foreground" Value="#FFF" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="PART_border" Property="Background" Value="{StaticResource WindowBorderBrush}"/>
+                                <Setter TargetName="PART_border" Property="Opacity" Value="1" />
+                                <Setter Property="Foreground" Value="#FFF"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="425*"/>
+            <ColumnDefinition Width="167*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="0.1*"/>
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <ImageBrush x:Name="BackgroundImg" 
+                        Stretch="None" 
+                        ImageSource="Resorces/Background.png" 
+                        TileMode="FlipXY" 
+                        ViewportUnits="Absolute" 
+                        Viewport="0 0 1000 1000"/>
+        </Grid.Background>
+        <Viewbox Grid.Row="1" Stretch="Uniform" Grid.ColumnSpan="2">
+            <Grid
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center">
+                <Image Source="Resorces/DeviceImg.png"/>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.6*"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <StackPanel
+                        Grid.Row="1"
+                        Background="White"
+                        MaxWidth="330">
+                        <TextBlock 
+                            HorizontalAlignment="Center"
+                            TextAlignment="Center"
+                            FontSize="26"
+                            Padding="0 20 0 5" 
+                            TextWrapping="Wrap">
+                            <Run Text="{Binding DeviceName}"/>
+                            <Run Text=": Установка"/>
+                        </TextBlock>
+                        <TextBlock 
+                            HorizontalAlignment="Center"
+                            FontSize="22">
+                            Установка приложений
+                        </TextBlock>
+                        <Image 
+                            x:Name="ConnectViaUSB"
+                            Source="Resorces/InstallImg.png"
+                            Width="300" 
+                            Margin="0 25 0 15"/>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Viewbox>
+        <StackPanel 
+            Grid.Row="2" 
+            Grid.ColumnSpan="2"
+            Margin="0 20">
+            <TextBlock 
+                Text="{Binding ElementName=ProgressBarStatus, Path=Value, StringFormat={}{0:0}%}" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center" 
+                Foreground="Gray"/>
+            <ProgressBar 
+                Name="ProgressBarStatus"
+                Minimum="0" 
+                Maximum="100" 
+                Value="30" 
+                Height="10"
+                Width="700"
+                BorderThickness="0"
+                Foreground="#72B2EE"/>
+            <TextBlock  
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center" 
+                Foreground="Gray">
+                <Run Text="{Binding InstallationTimeMin}"/>
+                <Run Text=":"/>
+                <Run Text="{Binding InstallationTimeSec}"/>
+            </TextBlock>
+            <Button
+                Name="CancelButton"
+                Click="CancelButton_Click"
+                Style="{StaticResource RoundButtonTemplate}"
+                Height="30"
+                Width="80"
+                Margin="0 15 0 0"
+                FontSize="14"
+                Content="Отмена">
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>
