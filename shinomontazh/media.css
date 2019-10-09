@@ -1,0 +1,218 @@
+body {
+	font-size: 2em;
+}
+  /*Бургер*/
+header {
+	max-height: 120px;
+}
+main {
+	padding-top: 120px;
+}
+header > h1, header > p {
+	display: none;
+} 
+#submenu+label {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	line-height: 120px;
+	font-size: 2.5em;
+	width: 100%;
+}
+nav {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-ms-flex-pack: distribute;
+	    justify-content: space-around;
+	text-align: center;
+	font-size: 0;
+	max-height: 0;
+	overflow: hidden;
+	position: absolute;
+	top: 119px;
+	left: 0;
+	-webkit-transition: .5s;
+	-o-transition: .5s;
+	transition: .5s;
+	width: 100%;
+}
+nav a {
+	display: block;
+	padding: 35px 0px;
+	width: 100vw;
+}
+input#submenu:checked~nav {
+	background-color: black;
+	font-size: 1.5em;
+	max-height: 100vh;
+	-webkit-transition: .5s;
+	-o-transition: .5s;
+	transition: .5s;
+}
+.burger-line {
+	background-color: white;
+	display: block;
+	position: absolute;
+	top: 30px;
+	right: 30px;
+	height: 5px;
+	width: 90px;
+	-webkit-transition: .5s;
+	-o-transition: .5s;
+	transition: .5s;
+}
+.second, .third {
+	top: 60px;
+}
+.fourth {
+	top: 90px;
+}
+input#submenu:checked ~ .first, input:checked ~ .fourth {
+	opacity: 0;
+	-webkit-transition: .5s;
+	-o-transition: .5s;
+	transition: .5s;
+}
+input#submenu:checked ~ .second {
+	-webkit-transform: rotate(45deg);
+	    -ms-transform: rotate(45deg);
+	        transform: rotate(45deg);
+	-webkit-transition: .5s;
+	-o-transition: .5s;
+	transition: .5s;
+}
+input#submenu:checked ~ .third {
+	-webkit-transform: rotate(-45deg);
+	    -ms-transform: rotate(-45deg);
+	        transform: rotate(-45deg);
+	-webkit-transition: .5s;
+	-o-transition: .5s;
+	transition: .5s;
+}
+
+/* Стили для index.html и about_us.html */
+.welcome {
+	font-size: 1.5em;
+}
+.services, .equipment, .staff {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+}
+.services  img{
+	width: 65vw;
+}
+.second_cell {-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1;}
+.third_cell {-webkit-box-ordinal-group:3;-ms-flex-order:2;order:2;}
+.fourth_cell {-webkit-box-ordinal-group:4;-ms-flex-order:3;order:3;}
+.fifth_cell {-webkit-box-ordinal-group:5;-ms-flex-order:4;order:4;}
+.sixth_cell {-webkit-box-ordinal-group:6;-ms-flex-order:5;order:5;}
+.seventh_cell {-webkit-box-ordinal-group:7;-ms-flex-order:6;order:6;}
+.eighth_cell {-webkit-box-ordinal-group:8;-ms-flex-order:7;order:7;}
+.ninth_cell {-webkit-box-ordinal-group:9;-ms-flex-order:8;order:8;}
+.tenth_cell {-webkit-box-ordinal-group:10;-ms-flex-order:9;order:9;}
+.eleventh_cell {-webkit-box-ordinal-group:11;-ms-flex-order:10;order:10;}
+.twelveth_cell {-webkit-box-ordinal-group:12;-ms-flex-order:11;order:11;}
+
+.equipment p {
+	margin-top: -5px; /*не было никакого отступа*/
+	margin-bottom: 100px;
+}
+/* Стили для shinomontazh.html */
+.shinomontazh {
+font-size: 1.1em;
+}
+.shinomontazh th:first-child {
+	width: 10%;
+}
+.shinomontazh td:nth-child(n+5),
+.shinomontazh th:nth-child(n+5)  {
+	display: none;
+}
+.repair_service {
+	width: 80%;
+}
+/*Стили для tires.html*/ 
+.tires {
+	font-size: 0.8em;
+}
+/* Стили для oil.html */
+.oil_brand {
+	margin: auto;
+	width: 100%;
+}
+.oil_brand:before {
+	content: "(нажмите на бренд, чтобы посмотреть, какие масла этого бренда есть в наличии)";
+	display: table;
+	clear: both;
+	font-size: 1.3em;
+	margin: -30px 10px 30px;
+}
+.oil_brand > div {
+	width: 100%;
+}
+.oil_brand > div > label {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	font-size: 2em;
+	line-height: 2em;
+}
+.oil_brand > div > div {
+	display: -ms-grid;
+	display: grid;
+	place-items: center center;
+	font-size: 48px;
+	overflow: hidden;
+	position: static;
+	margin: auto;
+	height: 0;
+	width: 100%;
+	-webkit-transform: none;
+	    -ms-transform: none;
+	        transform: none;
+} 
+.oil_brand > div:hover > div {
+	-webkit-transform: none;
+	    -ms-transform: none;
+	        transform: none;
+}
+.oil_brand > div > div > p {
+	height: 100%;
+	padding-bottom: 10px;
+}
+.oil_brand > .toyota > div > p {
+	font-size: 48px;
+	height: 100%;
+}
+.oil_brand input:checked ~ div {
+	height: auto;
+	-webkit-transform: none;
+	    -ms-transform: none;
+	        transform: none;
+}
+.oil_link {
+	position: static;
+	font-size: 1.5em;
+	padding: 50px 0px;
+	margin: auto;
+	width: 95%;
+}
+.oil_brand:hover .oil_link {
+	opacity: 1;
+}
